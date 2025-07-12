@@ -44,7 +44,7 @@ def predictor(train_dataset, train_sampler,user_embedding ,valid_sampler, model,
     for user_id, embedding_vector in user_embedding.items():
         tensor_embedding = torch.tensor(embedding_vector).to(devices[0])
         user_embedding_on_device[user_id] = tensor_embedding
-    for epoch_idx in range(args.epochs+start_epoch):
+    for epoch_idx in range(args.epochs):
         model.eval()
         predictor_layer.train()
         loss_train_list = []
